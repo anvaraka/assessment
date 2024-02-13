@@ -1,0 +1,19 @@
+$breakpoints: (
+  mobile: 320px,
+  tablet: 768px,
+  laptop: 1024px,
+  desktop: 1280px,
+  desktop-l: 1440px,
+  desktop-xl: 1600px,
+  xxl: 1920px
+);
+
+@function breakpoint($name) {
+  @return map-get($breakpoints, $name);
+}
+
+@mixin viewportMin($breakpoint) {
+  @media screen and (min-width: breakpoint($breakpoint)) {
+    @content;
+  }
+}
